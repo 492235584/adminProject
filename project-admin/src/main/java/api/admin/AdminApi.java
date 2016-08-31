@@ -42,20 +42,21 @@ public class AdminApi {
      * @apiSuccessExample {json} Success-Response:
      * HTTP/1.1 200 OK
      * {
-     * errorCode:0000000,
-     * errorMessage:“保存成功”
-     * data:主键id
+     *  "code": "0000000",
+     *  "msg": "保存成功",
+     *  "data": 插入的主键id,
+     *  "error": false,
+     *  "succ": true
      * }
      * @apiError 0000002 参数不足
      * @apiError 0000003 数据已存在
      * @apiErrorExample {json} Error-Response:
      * HTTP/1.1 200 OK
      * {
-     * errorCode:0000002,
-     * errorMessage:“参数不足”
-     * data:{
-     * <p>
-     * }
+     *  "code": "0000002",
+     *  "msg": "参数不足",
+     *  "error": true,
+     *  "succ": false
      * }
      * </pre>
      */
@@ -69,6 +70,49 @@ public class AdminApi {
         return res;
     }
 
+    /**
+     * <pre>
+     *
+     * @api {post} http://23.105.192.196:8080/project-admin/admin/find 项目查询
+     * @apiName 项目查询
+     * @apiGroup ADMIN
+     * @apiVersion 0.1.0
+     * @apiDescription 可传参数：name/type/field 根据传递的参数查询，如果不传参数则查询所有
+     * @apiParam {String} name 项目名
+     * @apiParam {Integer} type 类型1.android，2.ios，3.weixin，4.web，5.soft
+     * @apiParam {Integer} field 领域
+     * @apiSuccess {String} errorCode 结果码
+     * @apiSuccess {String} errorMessage 消息说明
+     * @apiSuccess {Object} data 数据
+     * @apiSuccessExample {json} Success-Response:
+     * HTTP/1.1 200 OK
+     * {
+     *  "code": "0000000",
+     *  "msg": "查询成功",
+     *  "data": {
+     *      list:{
+     *          name:
+     *          imagePath
+     *          type:
+     *          li
+     *      }
+     *
+     *  }
+     *  "error": false,
+     *  "succ": true
+     * }
+     * @apiError 0000002 参数不足
+     * @apiError 0000003 数据已存在
+     * @apiErrorExample {json} Error-Response:
+     * HTTP/1.1 200 OK
+     * {
+     *  "code": "0000002",
+     *  "msg": "参数不足",
+     *  "error": true,
+     *  "succ": false
+     * }
+     * </pre>
+     */
     @ResponseBody
     @RequestMapping(value = "/find",method = RequestMethod.POST)
     public ResultMap find(@RequestBody Project project) {

@@ -20,7 +20,7 @@
         from project
         <where>
             <if test="name != null">
-                where id = #{id},
+                id = #{id},
             </if>
             <if test="name != null">
                 and name = #{name},
