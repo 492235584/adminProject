@@ -73,8 +73,8 @@ public class AdminApi {
     /**
      * <pre>
      *
-     * @api {post} http://23.105.192.196:8080/project-admin/admin/find 项目查询
-     * @apiName 项目查询
+     * @api {post} http://23.105.192.196:8080/project-admin/admin/find 项目查询接口
+     * @apiName 项目查询接口
      * @apiGroup ADMIN
      * @apiVersion 0.1.0
      * @apiDescription 可传参数：name/type/field 根据传递的参数查询，如果不传参数则查询所有
@@ -87,19 +87,7 @@ public class AdminApi {
      * @apiSuccessExample {json} Success-Response:
      * HTTP/1.1 200 OK
      * {
-     *  "code": "0000000",
-     *  "msg": "查询成功",
-     *  "data": {
-     *      list:{
-     *          name:
-     *          imagePath
-     *          type:
-     *          li
-     *      }
      *
-     *  }
-     *  "error": false,
-     *  "succ": true
      * }
      * @apiError 0000002 参数不足
      * @apiError 0000003 数据已存在
