@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import service.admin.AdminService;
 
+import java.util.List;
+
 /**
  * Created by xiejiahao on 2016/8/30.
  */
@@ -28,11 +30,11 @@ public class AdminApi {
      * @apiName 项目保存
      * @apiGroup ADMIN
      * @apiVersion 0.1.0
-     * @apiDescription 详细描述
-     * @apiParam {String} name 项目名
+     * @apiDescription 不可保存name相同的项目，感叹号为必传参数
+     * @apiParam {String} name ！！！项目名
      * @apiParam {String} imagePath 图片路径
-     * @apiParam {Integer} type 类型1.android，2.ios，3.weixin，4.web，5.soft
-     * @apiParam {Integer} field 领域
+     * @apiParam {Integer} type ！！！类型1.android，2.ios，3.weixin，4.web，5.soft
+     * @apiParam {Integer} field ！！！领域
      * @apiParam {String} link 项目连接
      * @apiSuccess {String} errorCode 结果码
      * @apiSuccess {String} errorMessage 消息说明
@@ -65,5 +67,12 @@ public class AdminApi {
         }
         ResultMap res = adminService.save(project);
         return res;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/find",method = RequestMethod.POST)
+    public ResultMap find(@RequestBody Project project) {
+        List<Project> res = adminService.findBySearchAble(project);
+        return ResultMap.succResult("查询成功",res);
     }
 }
