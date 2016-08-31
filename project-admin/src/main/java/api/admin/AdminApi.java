@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import service.admin.AdminService;
 
@@ -23,7 +24,7 @@ public class AdminApi {
     /**
      * <pre>
      *
-     * @api {post} http://localhost:8080/firstversion/admin/save 项目保存
+     * @api {post} http://23.105.192.196:8080/project-admin/admin/save 项目保存
      * @apiName 项目保存
      * @apiGroup ADMIN
      * @apiVersion 0.1.0
@@ -57,7 +58,7 @@ public class AdminApi {
      * </pre>
      */
     @ResponseBody
-    @RequestMapping("/save")
+    @RequestMapping(value = "/save",method = RequestMethod.POST)
     public ResultMap save(@RequestBody Project project) {
         if (null == project.getName() || null == project.getType() || null == project.getField()) {
             return ResultMap.errorResult(CodeEnmu.paramLack);
