@@ -19,7 +19,7 @@
         <include refid="Base_Column_List"/>
         from project
         <where>
-            <if test="name != null">
+            <if test="id != null">
                 id = #{id}
             </if>
             <if test="name != null">
