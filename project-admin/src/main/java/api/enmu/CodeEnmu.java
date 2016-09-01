@@ -10,6 +10,7 @@ public enum CodeEnmu {
 	dataExist("0000003","数据已存在"),
 	dataNotExist("0000004","数据不存在"),
 	dbException("0000005","数据库异常"),
+	paramError("0000006","参数错误"),
 
 	example("",""),
 	;

@@ -35,4 +35,12 @@ public class AdminServiceImpl implements AdminService {
         }
         return listData;
     }
+
+    public void updateProjectById(Project project) {
+        projectDao.updateByPrimaryKeySelective(project);
+    }
+
+    public void deleteProjectById(Integer id) {
+        projectDao.deleteByPrimaryKey(id);
+    }
 }

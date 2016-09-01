@@ -27,4 +27,16 @@ public interface AdminService {
      * @return
      */
     List<Project> findBySearchAble(Project project);
+
+    /**
+     * 通过id更新
+     *
+     */
+    void updateProjectById(Project project);
+
+    /**
+     * 通过id删除
+     *
+     */
+    void deleteProjectById(Integer id);
 }
