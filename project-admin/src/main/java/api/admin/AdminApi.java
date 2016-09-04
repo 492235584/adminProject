@@ -144,7 +144,7 @@ public class AdminApi {
      * HTTP/1.1 200 OK
      * {
      *  "code": "000000",
-     *  "msg": "更新成功",
+     *  "msg": "上传成功",
      *  "error": false,
      *  "succ": true
      * }
