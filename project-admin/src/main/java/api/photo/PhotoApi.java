@@ -29,9 +29,9 @@ public class PhotoApi {
     /**
      * <pre>
      *
-     * @api {post} http://23.105.192.196:8080/project-admin/photo/upload 项目更新z
-     * @apiName 项目更新z
-     * @apiGroup ADMIN
+     * @api {post} http://23.105.192.196:8080/project-admin/photo/upload 文件上传
+     * @apiName 文件上传
+     * @apiGroup UPLOAD
      * @apiVersion 0.1.0
      * @apiDescription 文件上传接口，传递multipart/*类型
      * @apiSuccess {String} errorCode 结果码
