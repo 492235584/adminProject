@@ -35,12 +35,12 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
-    <!--<filter>
+    <filter>
         <filter-name>corsFilter</filter-name>
-        <filter-class>com.xxx.api.cors.CorsFilter</filter-class>
+        <filter-class>filter.CorsFilter</filter-class>
         <init-param>
             <param-name>allowOrigin</param-name>
-            <param-value>http://web.xxx.com</param-value>
+            <param-value>*</param-value>
         </init-param>
         <init-param>
             <param-name>allowMethods</param-name>
@@ -58,7 +58,7 @@
     <filter-mapping>
         <filter-name>corsFilter</filter-name>
         <url-pattern>/*</url-pattern>
-    </filter-mapping>-->
+    </filter-mapping>
 
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
