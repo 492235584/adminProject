@@ -12,6 +12,8 @@ public enum CodeEnmu {
 	dbException("0000005","数据库异常"),
 	paramError("0000006","参数错误"),
 
+	file_io_error("0000010","文件io错误"),
+
 	example("",""),
 	;
 	private String code;

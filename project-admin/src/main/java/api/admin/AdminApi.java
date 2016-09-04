@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import service.admin.AdminService;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
@@ -115,8 +117,9 @@ public class AdminApi {
      */
     @ResponseBody
     @RequestMapping(value = "/find", method = RequestMethod.POST)
-    public ResultMap find(@RequestBody Project project) {
+    public ResultMap find(Project project,HttpServletResponse response) {
         List<Project> res = adminService.findBySearchAble(project);
+        response.addCookie(new Cookie("token","123456test"));
         return ResultMap.succResult("查询成功", res);
     }
 

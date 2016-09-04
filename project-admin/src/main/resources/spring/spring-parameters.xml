@@ -12,6 +12,18 @@
        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd   http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-	<context:property-placeholder  location="classpath:config/*.properties" ignore-resource-not-found="false"/>
+    <context:property-placeholder location="classpath:config/*.properties" ignore-resource-not-found="false"/>
+
+    <bean id="configProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="locations">
+            <list>
+                <value>classpath:/config/*.properties</value>
+            </list>
+        </property>
+    </bean>
+    <!--  读取properties的配置    -->
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
+        <property name="properties" ref="configProperties"/>
+    </bean>
 
 </beans>
